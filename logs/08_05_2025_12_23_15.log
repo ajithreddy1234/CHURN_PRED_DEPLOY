@@ -1,0 +1,13 @@
+[ 2025-08-05 12:23:16,351 ] 27 root - INFO - Entered the data ingestion method or component
+[ 2025-08-05 12:23:16,351 ] 30 root - INFO - Read the dataset as dataframe
+[ 2025-08-05 12:23:16,351 ] 36 root - INFO - Train test split initiated
+[ 2025-08-05 12:23:16,367 ] 43 root - INFO - Inmgestion of the data iss completed
+[ 2025-08-05 12:23:16,367 ] 78 root - INFO - Read train and test data completed
+[ 2025-08-05 12:23:16,367 ] 79 root - INFO - Obtaining preprocessing object
+[ 2025-08-05 12:23:16,367 ] 60 root - INFO - Numerical columns: ['Age']
+[ 2025-08-05 12:23:16,367 ] 61 root - INFO - Log-transform columns: ['Tenure']
+[ 2025-08-05 12:23:16,367 ] 62 root - INFO - One-hot columns: ['InternetService', 'ContractType']
+[ 2025-08-05 12:23:16,367 ] 117 root - INFO - Applying preprocessing object on training and testing dataframes.
+[ 2025-08-05 12:23:16,383 ] 129 root - INFO - Saving preprocessing object.
+[ 2025-08-05 12:23:16,383 ] 135 root - INFO - Data transformation complete.
+[ 2025-08-05 12:23:16,383 ] 31 root - INFO - Split training and test input data

@@ -1,0 +1,14 @@
+[ 2025-08-05 12:26:18,146 ] 27 root - INFO - Entered the data ingestion method or component
+[ 2025-08-05 12:26:18,161 ] 30 root - INFO - Read the dataset as dataframe
+[ 2025-08-05 12:26:18,176 ] 36 root - INFO - Train test split initiated
+[ 2025-08-05 12:26:18,200 ] 43 root - INFO - Inmgestion of the data iss completed
+[ 2025-08-05 12:26:18,211 ] 78 root - INFO - Read train and test data completed
+[ 2025-08-05 12:26:18,211 ] 79 root - INFO - Obtaining preprocessing object
+[ 2025-08-05 12:26:18,326 ] 60 root - INFO - Numerical columns: ['Age']
+[ 2025-08-05 12:26:18,326 ] 61 root - INFO - Log-transform columns: ['Tenure']
+[ 2025-08-05 12:26:18,326 ] 62 root - INFO - One-hot columns: ['InternetService', 'ContractType']
+[ 2025-08-05 12:26:18,326 ] 117 root - INFO - Applying preprocessing object on training and testing dataframes.
+[ 2025-08-05 12:26:18,377 ] 129 root - INFO - Saving preprocessing object.
+[ 2025-08-05 12:26:18,379 ] 135 root - INFO - Data transformation complete.
+[ 2025-08-05 12:26:18,379 ] 31 root - INFO - Split training and test input data
+[ 2025-08-05 12:27:28,889 ] 78 root - INFO - Best found model: XGBClassifier with score: 1.0
