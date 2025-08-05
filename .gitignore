@@ -1,0 +1,6 @@
+my_env/
+*.pyc
+__pycache__/
+.env
+.DS_Store
+*.pkl
