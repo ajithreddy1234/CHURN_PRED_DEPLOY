@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Churn Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="container">
+        <h1>Churn Prediction</h1>
+        <form method="POST">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" min="0" max="120" value="{{ input_data.Age if input_data else 30 }}" required />
+
+            <label for="gender">Gender</label>
+            <select name="gender" id="gender" required>
+                <option value="" disabled selected>Select Gender</option>
+                <option value="Male" {% if input_data and input_data.Gender == 'Male' %}selected{% endif %}>Male</option>
+                <option value="Female" {% if input_data and input_data.Gender == 'Female' %}selected{% endif %}>Female</option>
+                <option value="Other" {% if input_data and input_data.Gender == 'Other' %}selected{% endif %}>Other</option>
+            </select>
+
+            <label for="tenure">Tenure (months)</label>
+            <input type="number" name="tenure" id="tenure" min="0" value="{{ input_data.Tenure if input_data else 12 }}" required />
+
+            <label for="monthly_charges">Monthly Charges</label>
+            <input type="number" name="monthly_charges" id="monthly_charges" min="0" step="0.01" value="{{ input_data.MonthlyCharges if input_data else 50 }}" required />
+
+            <label for="contract_type">Contract Type</label>
+            <select name="contract_type" id="contract_type" required>
+                <option value="" disabled selected>Select Contract Type</option>
+                <option value="Month-to-month" {% if input_data and input_data.ContractType == 'Month-to-month' %}selected{% endif %}>Month-to-month</option>
+                <option value="One year" {% if input_data and input_data.ContractType == 'One year' %}selected{% endif %}>One year</option>
+                <option value="Two year" {% if input_data and input_data.ContractType == 'Two year' %}selected{% endif %}>Two year</option>
+            </select>
+
+            <label for="internet_service">Internet Service</label>
+            <select name="internet_service" id="internet_service" required>
+                <option value="" disabled selected>Select Internet Service</option>
+                <option value="DSL" {% if input_data and input_data.InternetService == 'DSL' %}selected{% endif %}>DSL</option>
+                <option value="Fiber optic" {% if input_data and input_data.InternetService == 'Fiber optic' %}selected{% endif %}>Fiber optic</option>
+                <option value="No" {% if input_data and input_data.InternetService == 'No' %}selected{% endif %}>No</option>
+            </select>
+
+            <label for="tech_support">Tech Support</label>
+            <select name="tech_support" id="tech_support" required>
+                <option value="" disabled selected>Select Tech Support</option>
+                <option value="Yes" {% if input_data and input_data.TechSupport == 'Yes' %}selected{% endif %}>Yes</option>
+                <option value="No" {% if input_data and input_data.TechSupport == 'No' %}selected{% endif %}>No</option>
+            </select>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if result %}
+            <div class="result-box">
+                <h2>Prediction Result: {{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
