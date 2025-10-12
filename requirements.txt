@@ -1,12 +1,12 @@
 streamlit
-numpy
-pandas
-scikit-learn
 imblearn
 xgboost
 catboost
-joblib
-flask
 torch
 pytest
--e .
+Flask==3.0.2
+pandas==2.2.2
+scikit-learn==1.5.1
+catboost==1.2.5
+numpy==1.26.4
+joblib==1.4.2
