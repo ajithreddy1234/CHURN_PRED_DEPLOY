@@ -43,16 +43,17 @@ jobs:
           class DummyModel:
               def predict(self, X):
                   try:
-                      return [1]*len(X)  # always "Churn" for test
+                      return [1] * len(X)   # Always predict "Churn" for tests
                   except Exception:
                       return [1]
-          with open('artifacts/model.pkl','wb') as f:
+          with open('artifacts/model.pkl', 'wb') as f:
               pickle.dump(DummyModel(), f)
           print("Dummy model written to artifacts/model.pkl")
           PY
 
       - name: Run pytest
         run: pytest -v
+
 
   # 3️⃣ Build & Push Docker image to Docker Hub
   build-and-publish:
