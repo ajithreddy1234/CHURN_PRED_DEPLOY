@@ -5,12 +5,13 @@ def test_home():
     assert client.get('/').status_code == 200
 
 def test_predict(monkeypatch):
-    # Mock PredictPipeline used inside application.py
-    import src.pipeline.predict_pipeline as pp
+    # Mock the symbol that application.py actually uses
     class DummyPipeline:
         def predict(self, df):
-            return [1]  # pretend "Churn"
-    monkeypatch.setattr(pp, "PredictPipeline", lambda: DummyPipeline())
+            return [1]  # pretend it predicted "Churn"
+
+    # 👉 Patch here (inside application module), not the src module
+    monkeypatch.setattr(application, "PredictPipeline", lambda: DummyPipeline())
 
     client = application.test_client()
     data = {
