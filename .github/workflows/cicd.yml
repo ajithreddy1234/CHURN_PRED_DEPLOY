@@ -35,6 +35,22 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
+      - name: Create dummy model artifact
+        run: |
+          python - <<'PY'
+          import os, pickle
+          os.makedirs('artifacts', exist_ok=True)
+          class DummyModel:
+              def predict(self, X):
+                  try:
+                      return [1]*len(X)  # always "Churn" for test
+                  except Exception:
+                      return [1]
+          with open('artifacts/model.pkl','wb') as f:
+              pickle.dump(DummyModel(), f)
+          print("Dummy model written to artifacts/model.pkl")
+          PY
+
       - name: Run pytest
         run: pytest -v
 
@@ -56,11 +72,13 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push image
+        id: docker_build   # <-- add id so we can reference outputs
         uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/churn-flask-app:latest
+
       - name: Image digest
-        run: echo ${{ steps.build-and-publish.outputs.digest }}
+        run: echo "${{ steps.docker_build.outputs.digest }}"
