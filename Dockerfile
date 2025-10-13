@@ -1,20 +1,28 @@
-# Use official lightweight Python image
+# ---------- Base Image ----------
 FROM python:3.10-slim
 
-# Set working directory inside container
+# ---------- Set Working Directory ----------
 WORKDIR /app
 
-# Copy requirements first (for better caching)
+# ---------- Install Dependencies ----------
+# Copy only requirements first (for better caching)
 COPY requirements.txt .
 
-# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your project files
+# ---------- Copy Application Files ----------
 COPY . .
 
-# Expose the Flask default port
-EXPOSE 5000
+# ---------- Set Environment Variables ----------
+# Render dynamically sets $PORT, so we just expose a placeholder
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8000
 
-# Run the app
-CMD ["python", "application.py"]
+# ---------- Expose Port ----------
+EXPOSE 8000
+
+# ---------- Start Gunicorn Server ----------
+# Gunicorn serves the Flask app: application:application
+#   (file: application.py | Flask instance: application)
+CMD ["sh", "-c", "gunicorn -w 2 -k gthread -b 0.0.0.0:${PORT} application:application"]
