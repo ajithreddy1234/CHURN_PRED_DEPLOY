@@ -1,3 +1,23 @@
+# IDE folders
+.idea/
+.vscode/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log
+
+# Build and egg info
+*.egg-info/
+dist/
+build/
+
+# Notebooks and checkpoints
+*.ipynb_checkpoints/
+
 my_env/
 *.pyc
 __pycache__/
@@ -6,12 +26,11 @@ __pycache__/
 *.pkl
 <<<<<<< HEAD
 venv
-.venv
 app.py
 setup.py
 .ebextensions
 mlproject.egg-info
+.venv
+
 
 >>>>>>> main
-
-
