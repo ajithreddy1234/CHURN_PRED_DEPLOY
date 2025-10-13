@@ -52,3 +52,5 @@ notebook/.ipynb_checkpoints/
 # ──────────────────────────────
 .ebextensions/
 *.sqlite3
+setup.py
+app.py
