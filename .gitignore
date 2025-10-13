@@ -1,36 +1,54 @@
-# IDE folders
+# ──────────────────────────────
+# OS / Editor / IDE files
+# ──────────────────────────────
+.DS_Store
 .idea/
 .vscode/
 
-# Python cache
+# ──────────────────────────────
+# Python environments
+# ──────────────────────────────
+.venv/
+venv/
+env/
+my_env/
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Logs
+# ──────────────────────────────
+# Build / Packaging
+# ──────────────────────────────
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# ──────────────────────────────
+# Logs / Temp / Cache
+# ──────────────────────────────
 logs/
 *.log
+*.bak
+*.tmp
 
-# Build and egg info
-*.egg-info/
-dist/
-build/
+# ──────────────────────────────
+# Notebooks / Checkpoints
+# ──────────────────────────────
+.ipynb_checkpoints/
+notebook/.ipynb_checkpoints/
 
-# Notebooks and checkpoints
-*.ipynb_checkpoints/
-
-my_env/
-*.pyc
-__pycache__/
+# ──────────────────────────────
+# Environment / Credentials
+# ──────────────────────────────
 .env
-.DS_Store
+.env.*
 *.pkl
-<<<<<<< HEAD
-venv
-app.py
-setup.py
-.ebextensions
-mlproject.egg-info
-.venv
 
-
->>>>>>> main
+# ──────────────────────────────
+# Deployment / Config
+# ──────────────────────────────
+.ebextensions/
+*.sqlite3

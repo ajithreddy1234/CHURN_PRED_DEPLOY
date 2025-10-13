@@ -1,8 +1,0 @@
-[ 2025-08-05 14:42:03,000 ] 97 werkzeug - WARNING -  * Debugger is active!
-[ 2025-08-05 14:42:03,000 ] 97 werkzeug - INFO -  * Debugger PIN: 708-951-057
-[ 2025-08-05 14:43:21,044 ] 97 werkzeug - INFO - 127.0.0.1 - - [05/Aug/2025 14:43:21] "GET / HTTP/1.1" 200 -
-[ 2025-08-05 14:43:21,146 ] 97 werkzeug - INFO - 127.0.0.1 - - [05/Aug/2025 14:43:21] "GET /static/style.css HTTP/1.1" 200 -
-[ 2025-08-05 14:43:21,177 ] 97 werkzeug - INFO - 127.0.0.1 - - [05/Aug/2025 14:43:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-[ 2025-08-05 14:43:38,297 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\venka\\PycharmProjects\\Churn_MLOPS\\my_env\\Lib\\site-packages\\sklearn\\preprocessing\\_encoders.py', reloading
-[ 2025-08-05 14:43:38,305 ] 97 werkzeug - INFO - 127.0.0.1 - - [05/Aug/2025 14:43:38] "POST / HTTP/1.1" 200 -
-[ 2025-08-05 14:43:38,332 ] 97 werkzeug - INFO - 127.0.0.1 - - [05/Aug/2025 14:43:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
