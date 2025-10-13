@@ -16,7 +16,11 @@ import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
+<<<<<<< HEAD
 data_path = r"C:\Users\venka\PycharmProjects\Churn_analysis\Data\customer_churn_data.csv"
+=======
+data_path = r"/Users/ajithreddy/Downloads/CHURN_PRED_DEPLOY-master/notebook/Data/customer_churn_data.csv"
+>>>>>>> main
 df1 = pd.read_csv(data_path)
 df1.drop("CustomerID", axis=1, inplace=True)
 df1["Gender"] = LabelEncoder().fit_transform(df1["Gender"])

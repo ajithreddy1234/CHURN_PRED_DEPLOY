@@ -4,3 +4,14 @@ __pycache__/
 .env
 .DS_Store
 *.pkl
+<<<<<<< HEAD
+venv
+.venv
+app.py
+setup.py
+.ebextensions
+mlproject.egg-info
+
+>>>>>>> main
+
+
