@@ -8,3 +8,5 @@ venv
 .venv
 app.py
 setup.py
+.ebextensions
+mlproject.egg-info
