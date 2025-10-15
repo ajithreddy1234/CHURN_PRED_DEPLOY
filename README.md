@@ -24,6 +24,3 @@ This project demonstrates the **full ML lifecycle** — from model training and 
 - **Frameworks:** Flask, Docker  
 - **Deployment:** Render, GitHub Actions (CI/CD)  
 
----
-
-## 🧩 Project Structure
